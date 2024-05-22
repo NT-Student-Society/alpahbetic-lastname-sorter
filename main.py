@@ -6,8 +6,9 @@ def main():
         lastNames = [[name[-1], stripedNames.index(name)] for name in stripedNames]
         lastNames.sort()
         sortedNames = [splitNames[lastName[-1]].strip("\n") for lastName in lastNames]
+    with open("out.txt","w") as f:
         for name in sortedNames:
-            print(name)
+            f.write(f"{name}\n")
 
 if __name__ == "__main__":
     main()
